@@ -14,7 +14,7 @@ git clone https://github.com/fontanalorenzo/gradle-java-generic-project.git
 gradle build
 ```
 
-***Compile all to a single Jar**
+**Compile into a single .jar**
 ```
 gradle uberjar
 ```
