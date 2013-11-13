@@ -1,4 +1,4 @@
-package main.java;
+package com.fontanalorenzo.example;
 
 /**
  * Class Application

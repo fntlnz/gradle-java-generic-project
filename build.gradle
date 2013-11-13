@@ -1,7 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'application'
 version = '1.0'
-mainClassName = 'main.java.Application'
+mainClassName = 'com.fontanalorenzo.example.Application'
 
 buildscript {
     println('Gradle Java Generic Project')
@@ -12,7 +12,7 @@ repositories {
 }
 
 dependencies {
-//Define here your dependencies
+    //Define here your dependencies
     compile group: 'commons-collections', name: 'commons-collections', version: '3.2'
     testCompile group: 'junit', name: 'junit', version: '4.+'
 }
