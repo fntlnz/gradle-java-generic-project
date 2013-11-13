@@ -1,0 +1,24 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'application'
+version = '1.0'
+mainClassName = 'main.java.Application'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+//Define here your dependencies
+}
+
+task uberjar(type: Jar, dependsOn: ':compileJava') {
+    from files(sourceSets.main.output.classesDir)
+    from configurations.runtime.asFileTree.files.collect {
+        zipTree(it)
+    }
+
+    manifest {
+        attributes 'Main-Class': mainClassName
+    }
+}
