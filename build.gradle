@@ -2,6 +2,11 @@ apply plugin: 'java'
 apply plugin: 'application'
 version = '1.0'
 mainClassName = 'main.java.Application'
+defaultTasks 'uberjar'
+
+buildscript {
+    println('Gradle Java Generic Project')
+}
 
 repositories {
     mavenCentral()
