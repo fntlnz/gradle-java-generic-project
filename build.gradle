@@ -3,8 +3,9 @@ apply plugin: 'application'
 version = '1.0'
 mainClassName = 'com.fontanalorenzo.example.Application'
 
-buildscript {
-    println('Gradle Java Generic Project')
+ext.sharedManifest = manifest {
+    attributes 'Main-Class': mainClassName
+    attributes 'Implementation-Title': 'Gradle Quickstart', 'Implementation-Version': version
 }
 
 repositories {
@@ -12,13 +13,12 @@ repositories {
 }
 
 jar {
-    manifest {
-        attributes 'Main-Class': mainClassName
+    manifest = project.manifest {
+        from sharedManifest
     }
 }
 
 dependencies {
-    //Define here your dependencies
-    compile group: 'commons-collections', name: 'commons-collections', version: '3.2'
+    compile 'commons-collections:commons-collections:3.2'
     testCompile 'junit:junit:[4,)'
 }
