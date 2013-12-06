@@ -1,9 +1,11 @@
 apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'idea'
+mainClassName = "com.fontanalorenzo.example.Application"
 version = '1.0'
-ext.mainClassName = 'com.fontanalorenzo.example.Application'
 
 ext.sharedManifest = manifest {
-    attributes 'Main-Class': ext.mainClassName
+    attributes 'Main-Class': mainClassName
     attributes 'Implementation-Title': 'Gradle Quickstart', 'Implementation-Version': version
 }
 
@@ -23,6 +25,5 @@ task wrapper(type: Wrapper) {
 
 dependencies {
     compile 'commons-collections:commons-collections:3.2'
-    compile 'io.netty:netty:3.5.0.Final'
     testCompile 'junit:junit:[4,)'
 }
