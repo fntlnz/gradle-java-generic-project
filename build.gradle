@@ -1,10 +1,9 @@
 apply plugin: 'java'
-apply plugin: 'application'
 version = '1.0'
-mainClassName = 'com.fontanalorenzo.example.Application'
+ext.mainClassName = 'com.fontanalorenzo.example.Application'
 
 ext.sharedManifest = manifest {
-    attributes 'Main-Class': mainClassName
+    attributes 'Main-Class': ext.mainClassName
     attributes 'Implementation-Title': 'Gradle Quickstart', 'Implementation-Version': version
 }
 
@@ -18,7 +17,12 @@ jar {
     }
 }
 
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.9'
+}
+
 dependencies {
     compile 'commons-collections:commons-collections:3.2'
+    compile 'io.netty:netty:3.5.0.Final'
     testCompile 'junit:junit:[4,)'
 }
