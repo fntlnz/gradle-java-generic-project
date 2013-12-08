@@ -6,7 +6,7 @@ version = '1.0'
 
 ext.sharedManifest = manifest {
     attributes 'Main-Class': mainClassName
-    attributes 'Implementation-Title': 'Gradle Quickstart', 'Implementation-Version': version
+    attributes 'Implementation-Title': 'Gradle Java Generic Project', 'Implementation-Version': version
 }
 
 repositories {
